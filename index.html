@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <main class="container">
+        <div class="weather-main">
+            <div class="weather-search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for a city..." autocomplete="off">
+                    <button type="submit">Search</button>
+                    <button type="button" id="location-btn" title="Get my location">📍</button>
+                </form>
+            </div>
+
+            <div class="weather-current" id="current-weather">
+                <h2 id="current-city">City Name</h2>
+                <div class="current-temp">
+                    <img id="current-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
+                    <span id="current-temp">25</span>
+                    <div class="unit-toggle">
+                        <button class="unit-btn active" data-unit="metric">°C</button>
+                        <button class="unit-btn" data-unit="imperial">°F</button>
+                        <button class="unit-btn" data-unit="standard">K</button>
+                    </div>
+                </div>
+                <p id="current-desc">Weather Description</p>
+                <p>Sunrise: <span id="sunrise">--:--</span> | Sunset: <span id="sunset">--:--</span></p>
+            </div>
+
+            <div class="weather-forecast" id="forecast-container">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecast-grid">
+                    </div>
+            </div>
+        </div>
+
+        <div class="weather-details">
+            <h3>Weather Details</h3>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <p>Feels Like</p>
+                    <span id="feels-like">--</span>
+                </div>
+                <div class="detail-card">
+                    <p>Humidity</p>
+                    <span id="humidity">--%</span>
+                </div>
+                <div class="detail-card">
+                    <p>Wind Speed</p>
+                    <span id="wind-speed">-- km/h</span>
+                </div>
+                <div class="detail-card">
+                    <p>Pressure</p>
+                    <span id="pressure">-- hPa</span>
+                </div>
+            </div>
+
+            <h3>Air Quality Index</h3>
+            <div class="aqi-card" id="aqi-card">
+                <span id="aqi-value">--</span>
+                <span id="aqi-desc">--</span>
+            </div>
+
+            <h3>Location Map</h3>
+            <div id="weather-map"></div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
